@@ -1,0 +1,97 @@
+export default function App() { const estados = [ 'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins' ];
+
+const postos = [ { nome: 'Posto Brasil', estado: 'São Paulo', cidade: 'Sorocaba', combustivel: 'Gasolina, Etanol e Diesel' }, { nome: 'Posto Avenida', estado: 'Rio de Janeiro', cidade: 'Rio de Janeiro', combustivel: 'Gasolina e GNV' }, { nome: 'Posto Norte', estado: 'Amazonas', cidade: 'Manaus', combustivel: 'Gasolina, Diesel e Etanol' } ];
+
+return ( <div className="min-h-screen bg-gray-100 p-6"> <div className="max-w-6xl mx-auto"> <h1 className="text-4xl font-bold text-center mb-6"> Postos de Combustível do Brasil </h1>
+
+<div className="bg-white rounded-3xl shadow-lg p-5 mb-6">
+      <h2 className="text-2xl font-semibold mb-4">
+        Escolha um Estado
+      </h2>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {estados.map((estado, index) => (
+          <button
+            key={index}
+            className="bg-black text-white rounded-xl px-4 py-2 hover:opacity-90 transition"
+          >
+            {estado}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div className="bg-white rounded-3xl shadow-lg p-4 mb-6">
+      <iframe
+        title="Mapa do Brasil"
+        src="https://maps.google.com/maps?q=postos%20de%20combustivel%20brasil&t=&z=4&ie=UTF8&iwloc=&output=embed"
+        className="w-full h-96 rounded-2xl border-0"
+        allowFullScreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-4">
+      {postos.map((posto, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-2xl shadow-md p-5"
+        >
+          <h2 className="text-2xl font-semibold mb-2">
+            {posto.nome}
+          </h2>
+
+          <p className="text-gray-700">
+            📍 {posto.cidade} - {posto.estado}
+          </p>
+
+          <p className="text-gray-700 mt-2">
+            ⛽ {posto.combustivel}
+          </p>
+
+          <button className="mt-4 bg-green-600 text-white px-4 py-2 rounded-xl hover:opacity-90 transition">
+            Ver no mapa
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
